@@ -12,3 +12,5 @@ Therefore, at the beginning, after pull, create a .env file in which you pass th
   -REFRESH_TOKEN_EXPIRE_DAYS = 7
   -ADMIN_NAME = your_admin_name
   -ADMIN_PAS = yoour_admin_pas
+
+After this, you can run the project via uvicorn.
