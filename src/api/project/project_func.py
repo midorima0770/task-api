@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.api.auth.auth_config import oauth2_scheme
 from src.api.auth.auth_crud import auth_crud
+from src.api.auth.auth_exceptions import EmailVerifiedException
 from src.api.auth.auth_func import auth_get_user_func, get_user_role_from_token, get_user_from_token
 from src.api.auth.token_func import verify_token
 from src.api.project.project_exceptions import ProjectsNotFoundException, ProjectAlreadyExistsException, \
@@ -59,8 +60,6 @@ async def create_project_func(
     user_orm = await get_user_from_token(token, db)
     if not user_orm:
         raise UserNotFoundException()
-
-
 
     if user_orm.id == new_project.owner_id:
 

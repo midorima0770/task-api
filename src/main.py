@@ -30,7 +30,7 @@ async def create_all():
         if flag:
             logger.warning("Admin acc is already created")
         else:
-            await auth_crud.create_admin(db=db, name=settings.ADMIN_NAME, password=settings.ADMIN_PAS)
+            await auth_crud.create_admin(db=db, name=settings.ADMIN_NAME,email=settings.ADMIN_EMAIL,password=settings.ADMIN_PAS)
             logger.warning("Admin acc was creatd")
 
 # Регистрируем обработчик всех кастомных ошибок

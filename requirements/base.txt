@@ -11,3 +11,6 @@ python-jose[cryptography]
 python-multipart
 tzdata
 websockets
+pytest
+pydantic[email]
+aiosmtplib

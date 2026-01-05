@@ -2,6 +2,7 @@ from fastapi import Depends,status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.api.auth.auth_config import oauth2_scheme
+from src.api.auth.auth_exceptions import EmailVerifiedException
 from src.api.auth.auth_func import get_user_from_token
 from src.api.project.project_crud import project_crud
 from src.api.project.project_exceptions import ProjectNotFoundException
@@ -155,6 +156,7 @@ async def status_done_func(
     user_orm = await get_user_from_token(token, db)
     if not user_orm:
         raise UserNotFoundException()
+
 
     task_orm = await task_crud.get_task_by_id(db=db, id=id)
     if not task_orm:

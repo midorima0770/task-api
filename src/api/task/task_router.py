@@ -2,6 +2,7 @@ from fastapi import APIRouter, status, Depends, WebSocket, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.api.auth.auth_config import oauth2_scheme
+from src.api.auth.auth_exceptions import EmailNotVerifiedException
 from src.api.project.project_exceptions import ProjectNotFoundException
 from src.api.task.task_exceptions import TaskNotFoundException, TasksNotFoundException, TaskAccessForbiddenException, \
     TaskAlreadyExistsException, InvalidStatusTransitionInProgressException, DeadlineExceededException, \

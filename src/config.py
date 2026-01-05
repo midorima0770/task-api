@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: str = os.getenv("REFRESH_TOKEN_EXPIRE_DAYS")
 
     ADMIN_NAME: str = os.getenv("ADMIN_NAME")
-
+    ADMIN_EMAIL: str = os.getenv("ADMIN_EMAIL")
     ADMIN_PAS: str = os.getenv("ADMIN_PAS")
 
     class Config:

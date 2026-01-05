@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends,status,HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.api.auth.auth_config import oauth2_scheme
+from src.api.auth.auth_exceptions import EmailVerifiedException, EmailNotVerifiedException
 from src.api.project.project_exceptions import ProjectsNotFoundException, ProjectNotFoundException, \
     ProjectAccessForbiddenException, ProjectAlreadyExistsException
 from src.api.project.project_func import get_all_projects_func, create_project_func, delete_project_func, \

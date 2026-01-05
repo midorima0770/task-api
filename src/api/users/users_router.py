@@ -15,14 +15,3 @@ async def get_users(
     users=Depends(get_users_db)  # FastAPI сам передаст token и db
 ):
     return users
-
-@users.get("/get/{name}")
-async def get_user_by_name(
-    name: str,
-    token: str = Depends(oauth2_scheme),
-    db: AsyncSession = Depends(get_async_db)
-):
-    try:
-        return await get_one_user_by_id_db(name, db)
-    except UserNotFoundException:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"User with name={name} not found")
