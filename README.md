@@ -11,9 +11,9 @@ I chose postgresql as the database.
   -ACCESS_TOKEN_EXPIRE_MINUTES = 30 \
   -REFRESH_TOKEN_EXPIRE_DAYS = 7 \
   -ADMIN_NAME = your_admin_name \
-  -ADMIN_PAS = your_admin_pas 
-  -SMTP_GMAIL_USER = your smtp gmail
-  -SMTP_GMAIL_PASS = your smtp gmail password
+  -ADMIN_PAS = your_admin_pas \
+  -SMTP_GMAIL_USER = your smtp gmail \
+  -SMTP_GMAIL_PASS = your smtp gmail password \
 
 2).The next step is to create venv and activate it.
 
