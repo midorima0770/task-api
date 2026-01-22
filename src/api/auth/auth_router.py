@@ -19,7 +19,7 @@ auth = APIRouter(prefix="/auth",tags=["auth"])
 
 
 # Роутер на регистрацию
-@auth.post("/register")
+@auth.post("/register",status_code=status.HTTP_201_CREATED)
 async def auth_register(
     register_schema: RegisterSchema,
     db: AsyncSession = Depends(get_async_db)
